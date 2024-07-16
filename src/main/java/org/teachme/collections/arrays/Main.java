@@ -1,10 +1,8 @@
 package org.teachme.collections.arrays;
 
-import java.util.Arrays;
-
 /**
  *
- * basierend auf Kurs:  https://www.linkedin.com/learning/java-algorithms/apply-custom-parsing-to-search-algorithms
+ * basierend auf Kurs:  <a href="https://www.linkedin.com/learning/java-algorithms/apply-custom-parsing-to-search-algorithms">...</a>
  */
 
 public abstract class Main {
