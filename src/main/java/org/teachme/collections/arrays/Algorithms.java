@@ -77,4 +77,24 @@ public class Algorithms {
                 .filter(isEvenPred)
                 .toArray();
     }
+
+    // reverse Array
+    public static int[] reverseArray(int[] arr){
+        int[] result = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[arr.length - 1 -i];
+        }
+        return result;
+    }
+
+    public static void reverseInPlace(int[] arr){
+        for(int i = 0; i < arr.length / 2; i++) {
+
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 -i];
+            arr[arr.length - 1 -i] = temp;
+        }
+    }
+
 }

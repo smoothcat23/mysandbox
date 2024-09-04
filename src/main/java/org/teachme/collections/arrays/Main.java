@@ -39,10 +39,30 @@ public abstract class Main {
         Arrays.stream(Algorithms.findEverNums(arr2, arr3))
                 .forEach(System.out::println);
 
-        System.out.println();
-
+        System.out.println("-----------------------");
         Arrays.stream(Algorithms.findEverNums2(arr2, arr3))
                 .forEach(System.out::println);
+
+        System.out.println("---- Reverse Array 1");
+        int[] arr4 = {0,7,10,20,39,50,92} ;
+        int[] result = Algorithms.reverseArray(arr4);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + ",");
+        }
+        System.out.println("---- Reverse Array 2");
+        // Besser
+        Arrays.stream(Algorithms.reverseArray(arr4))
+                .forEach(System.out::println);
+        System.out.println("---- Done");
+
+        Algorithms.reverseInPlace(arr4);
+        Arrays.stream(arr4).forEach(System.out::println);
+
+        // gleiches Array ausgeben, aber auf einer Zeile mit Komma
+        Arrays.stream(arr4).forEach( str -> System.out.print(str + ","));
+        System.out.println("---- Done");
     }
+
 
 }

@@ -1,7 +1,12 @@
 package org.teachme.string.validate1;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
+
+import org.apache.commons.lang3.StringUtils;
 
 public abstract class Main {
 
@@ -15,6 +20,8 @@ public abstract class Main {
         System.out.println( isPasswordComplex("HALL0"));
 
         System.out.println(normalizeString("HAll12-12,32 "));
+
+        Main.test1();
     }
 
     public static boolean isPasswordComplex(String s) {
@@ -28,5 +35,22 @@ public abstract class Main {
 
     public static String normalizeString(String s){
         return s.toLowerCase().trim().replace(",","");
+    }
+
+    public static void test1(){
+        System.out.println("test some method references");
+
+        List<String> myList = Arrays.asList("hallo", "Welt");
+
+        // wäre interessant ein Consumer Object zu erzeugen
+        // was ist genau ein Consumer Object
+        // https://www.baeldung.com/foreach-java
+        myList.forEach(word ->
+
+             System.out.println(StringUtils.capitalize(word))
+        );
+
+        //myList.forEach(word -> System.out.println(word));
+        //myList.forEach(System.out::println);
     }
 }
