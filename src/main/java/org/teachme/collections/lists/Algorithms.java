@@ -32,5 +32,7 @@ public class Algorithms {
         System.out.println();
         System.out.println("display content from customLinkedList object");
         linkedList.displayContents();
+        linkedList.deleteBackHalf();
+        linkedList.displayContents();
     }
 }

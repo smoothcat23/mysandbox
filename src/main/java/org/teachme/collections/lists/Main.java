@@ -28,7 +28,6 @@ public abstract class Main {
         CustomLinkedList linkedList = new CustomLinkedList();
         Algorithms.customLinkedList(linkedList);
 
-
     }
 
 
