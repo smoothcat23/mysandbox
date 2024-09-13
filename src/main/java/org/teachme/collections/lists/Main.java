@@ -28,6 +28,17 @@ public abstract class Main {
         CustomLinkedList linkedList = new CustomLinkedList();
         Algorithms.customLinkedList(linkedList);
 
+        // Queue, Example with binary numbers
+        Algorithms.printBinary(5);
+        Algorithms.printBinary(0);
+        Algorithms.printBinary(-3);
+        Algorithms.printBinary(2);
+        Algorithms.printBinary(10);
+
+
+
+
+
     }
 
 
