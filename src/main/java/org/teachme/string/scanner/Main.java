@@ -22,5 +22,6 @@ public abstract class Main {
 
         System.out.println(b.toString());
 
+        scanner.close();
     }
 }
