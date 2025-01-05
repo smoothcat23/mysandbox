@@ -14,6 +14,21 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Palindrome {
 
+    public boolean isPalindrome(String word) {
+        return getPalindrome(word).equals(word) ? true : false;
+    }
+
+    public String getPalindrome(String word) {
+        if(word==null) return null;
+
+        String reversed = IntStream.range(0, word.length())
+                .mapToObj(i -> word.charAt(word.length() - i - 1))
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        return reversed;
+    }
+
     public static void test_multiple_variations(List<String> strings){
         for (String str : strings) {
             if( str!=null && (!str.isEmpty() ) ){
@@ -23,8 +38,6 @@ public class Palindrome {
     }
 
     public static void test_multiple_variations(String str){
-
-
         Palindrome.test_string_processing(str);
         Palindrome.test_stringUtils(str);        
         Palindrome.test_stream(str);
@@ -59,6 +72,10 @@ public class Palindrome {
 
         System.out.println(myName + ": " + str + " is " + reversed.equals(str));
     }
+
+
+
+
 
 }
 

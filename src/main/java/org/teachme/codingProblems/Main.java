@@ -1,6 +1,7 @@
 package org.teachme.codingProblems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,18 +24,15 @@ public abstract class Main {
         System.out.println("Coding Problems");
         
         // Palindrome
-        List<String> myStrings = new ArrayList<>();
-        myStrings.add(null);
-        myStrings.add("");
-        myStrings.add("banane");
-        myStrings.add("anana");
-        myStrings.add("saippuakivikauppias");
-
+        List<String> myStrings = Arrays.asList(null,"","banane","anana","saippuakivikauppias");
         System.out.println("Testing various strings for beeing a Palindrome");
+        for (String s : myStrings) {
+            
+        }
         Palindrome.test_multiple_variations(myStrings);
 
         // Fibonacci
-        Fibonacci.showSequenceUpTo(13);
+        //Fibonacci.showSequenceUpTo(13);
 
         // is number prime?
         int number = 97;

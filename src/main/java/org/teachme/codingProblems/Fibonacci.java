@@ -1,5 +1,8 @@
 package org.teachme.codingProblems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Show Fibonacci sequence up to certain position 
  */
@@ -8,34 +11,57 @@ package org.teachme.codingProblems;
 public class Fibonacci {
     private static final int FIRST = 1;
     private static final int SECOND = 1;
-    private int position;
-    private int[] sequence;
+    private int threshold;
+    private List<Integer> sequence;
 
-    public Fibonacci(int position) {
-        this.position = position;
-    }
-
-    public static void showSequenceUpTo(int threshold){
-        int first = 1;
-        int second = 1;
-        int sum = 0;
-        int[] sequence;
-
-        System.out.println("Show Fibonacci sequence up to " + threshold);
-        System.out.print(first + "," + second + ",");
-
-        while(sum <= threshold ){
-            sum = first + second;
-            System.out.print(sum + ",");
-            first = second;
-            second = sum;
-        }
-        System.out.println("... done ");
+    public Fibonacci(int threshold) {
+        this.threshold = threshold;
+        this.sequence = new ArrayList<Integer>();
     }
 
     public int[] getSequence() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getSequence'");
+        int first = FIRST;
+        int second = SECOND;
+        int sum = FIRST + SECOND;
+
+        sequence.add(FIRST);
+        sequence.add(SECOND);
+
+        while( sum <= threshold ){
+            sequence.add(Integer.valueOf(sum));
+            first = second;
+            second = sum;
+            sum = first + second;
+        }
+
+        int[] sequenceArr = new int[sequence.size()];
+        for(int i=0; i<sequence.size(); i++){
+            sequenceArr[i] = sequence.get(i);
+        }
+
+        return sequenceArr;
+    }
+
+    // chatgpt, better version
+    public int[] getSequenceStream() {
+        int first = FIRST;
+        int second = SECOND;
+
+        sequence.add(first);
+        sequence.add(second);
+
+        while( true ){
+            int sum = first + second;
+            if (sum > threshold) break;
+
+            sequence.add(sum);
+            first = second;
+            second = sum;
+        }
+
+        // method reference:            mapToInt(Integer::intValue) 
+        // is shorthand for lambda:     mapToInt(i -> i.intValue()) 
+        return sequence.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 
